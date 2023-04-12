@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { nanoid } from 'nanoid';
+
 import { SearchCountryAPI } from '../../components/SearchAPI/SearchAPI';
 import { Form } from '../../components/Form/Form';
 import { CountryItem } from '../CountryItem/CountryItem';
 import { Loader } from '../../components/Loader/Loader';
+
 import CountryListSCSS from '../CountryItem/CountryList.module.scss';
 import CountrySearchSCSS from './CountrySearch.module.scss';
+
 
 
 const CountrySearch = () => {
@@ -15,7 +19,9 @@ const CountrySearch = () => {
   const [error, setError] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const [loader, setLoader] = useState(false);
-  const countriesName = searchParams.get('name') ?? '';
+
+ const countriesName = searchParams.get('name') ?? '';
+
 
   useEffect(() => {
     serverAPI(searchCountryValue);
@@ -28,7 +34,7 @@ const CountrySearch = () => {
   };
 
   const onChang = name => {
-    const nextParams = name !== '' ? { name } : {};
+    const nextParams = name.common !== '' ? { name } : {};
     setSearchParams(nextParams);
   };
 
@@ -36,18 +42,17 @@ const CountrySearch = () => {
     setError(false);
     setLoader(true);
     const data = await SearchCountryAPI(name);
-    setCountries(data);
+    console.log("data: ", data);
+    const results = await data.sort((x, y) =>
+      x.name.common.localeCompare(y.name.common)
+    );
+    console.log("results: ", results);
+    setCountries(results);
+    console.log("countries ", countries);
+    if (!results.length) {
+      setError(true);
+    }
     setLoader(false);
-    
-    // console.log("countries: ", countries)
-    // const results = await Object.assign({}, data);
-    // console.log("results: ", results)
-    // setCountries(results);
-    // console.log("countries: ", countries)
-    // if (!results.length) {
-    //   setError(true);
-    // }
-    // setLoader(false);
    
   };
 
@@ -70,7 +75,7 @@ const CountrySearch = () => {
          countries.length > 0 && (
           <ul className={CountryListSCSS.list}>
             {countries.map(country => (
-              <CountryItem  key={country.population} country={country}></CountryItem >
+              <CountryItem  key={nanoid()} country={country} ></CountryItem >
             ))}
           </ul>
         )}

@@ -1,12 +1,12 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { useParams, Outlet, useNavigate } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
-import { SearchCountryAPI } from '../../components/SearchAPI/SearchAPI';
+import { SearchCountryByPopul } from '../../components/SearchAPI/SearchAPI';
 import CountriesDetailsSCSS from './CountriesDetails.module.scss'
 
 const CountriesDetails = () => {
     const {id} = useParams();
-    const [country, setMovie] = useState([]);
+    const [country, setCountry] = useState([]);
     const [goBack, setGoBack] = useState(1);
     const navigate = useNavigate();
 
@@ -21,9 +21,10 @@ const CountriesDetails = () => {
         return;
     }
 
-    const serverAPI = async () => {
-        const data = await SearchCountryAPI(id);
-        setMovie(data);
+    const serverAPI = async (name) => {
+        const data = await SearchCountryByPopul(id, name);
+        console.log("dataDetails: ", data)
+        setCountry(data);
     };
 
 
@@ -46,12 +47,12 @@ console.log("country: ", country);
                 </button>
                 <div className={CountriesDetailsSCSS.card}>
                     <img
-                        src={flags}
-                        alt={name}
+                        src={flags.svg}
+                        alt={name.common}
                         className={CountriesDetailsSCSS.img}
                     />
                     <div className={CountriesDetailsSCSS.info}>
-                        <h2 className={CountriesDetailsSCSS.title}>{name}</h2>
+                        <h2 className={CountriesDetailsSCSS.title}>{name.common}</h2>
                         <h2 className={CountriesDetailsSCSS.titleInfo}>Informations</h2>
                         <ul className={CountriesDetailsSCSS.list}>
                             <li className={CountriesDetailsSCSS.item}>
@@ -65,7 +66,7 @@ console.log("country: ", country);
                             </li>
                             <li className={CountriesDetailsSCSS.item}>
                                 <h3 className={CountriesDetailsSCSS.titleItem}>Languages:</h3>
-                                <p className={CountriesDetailsSCSS.textItem}>{languages}</p>
+                                <p className={CountriesDetailsSCSS.textItem}>{Object.values(languages)}</p>
                             </li>
                             <li className={CountriesDetailsSCSS.item}>
                                 <h3 className={CountriesDetailsSCSS.titleItem}>Currency:</h3>

@@ -25,9 +25,12 @@ export const SearchCountryAPI = async (name) => {
  
    return SearchAllCountries();
     }
-    const serverDataURL = `${BASE_URL}${name}?fields=name,capital,population,languages,flags`;
+    const serverDataURL = `${BASE_URL}name/${name}?fields=name,capital,population,languages,flags`;
     try {
-        const server = await axios.get(serverDataURL);
+        const server = await axios.get(serverDataURL, {    
+            params: {
+            page: 1,
+          },});
 
         const data = await server.data;
   
@@ -37,6 +40,28 @@ export const SearchCountryAPI = async (name) => {
         console.log(error);
     }
 };
+
+
+export const SearchCountryByPopul = async (name, id) => {
+
+       const serverDataURL = `${BASE_URL}name/${name}?${id}`;
+       try {
+           const server = await axios.get(serverDataURL);
+   
+           const data = await server.data;
+     
+           return data;
+          
+       } catch (error) {
+           console.log(error);
+       }
+   };
+
+
+
+
+
+
 
 
 // export const SearchMoviesDetails = async (id) => {

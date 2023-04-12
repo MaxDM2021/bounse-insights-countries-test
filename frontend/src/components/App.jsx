@@ -15,7 +15,7 @@ export const App = () => {
     <Routes>
       <Route path="/" exact element={<HeaderAll />} />
       <Route path="countries" element={<CountrySearch />} />
-      <Route path="countries/:id" element={<CountriesDetails />} />
+      <Route path="countries/:id" element={<CountriesDetails/>} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
     );
