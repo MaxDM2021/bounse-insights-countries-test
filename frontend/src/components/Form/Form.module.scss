@@ -1,0 +1,111 @@
+// .form{
+    
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 10px;
+//     margin: 20px auto;
+// }
+// .input{
+//     width: 400px;
+//     height: 35px;
+//     background-color: #ffffffad;
+//     border: none;
+//     border-radius: 2px;
+//     font-family: Roboto,sans-serif;
+//     letter-spacing: .02em;
+//     font-size: 25px;
+//     font-weight: 500;
+//     line-height: 1.2;
+//     color: rgb(39, 46, 52);
+//     text-align: center;
+// }
+// .submit{
+//     height: 35px;
+//     background-color: #ffffffad;
+//     font-family: Roboto,sans-serif;
+//     letter-spacing: .02em;
+//     font-size: 25px;
+//     font-weight: 500;
+//     line-height: 1.2;
+//     color: rgb(39, 46, 52);
+//     border: none;
+//     border-radius: 2px;
+//     transition-property: border;
+//     transition-duration: 250ms;
+//     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+//     &:hover,
+//     &:focus{
+//         border: 1px solid #000000;
+//     }
+// }
+
+// Стили компонента SearchForm
+
+.SearchForm {
+ display: flex;
+ margin: 20px;
+ margin-bottom: 73px;
+ 
+ width: 100%;
+justify-content: center;
+align-items: center;
+align-content: center;
+ background-color: #fff;
+ border-radius: 10px;
+ border: solid 2px #8E8E93;
+ overflow: hidden;
+
+}
+
+.SearchFormButton {
+ display: inline-block;
+ width: 48px;
+ height: 48px;
+ border: 0;
+ background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
+ background-size: 40%;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-color: #fff;
+ opacity: 0.6;
+ transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ cursor: pointer;
+ outline: none;
+ 
+}
+
+.SearchFormButton:hover {
+ opacity: 1;
+}
+
+.SearchFormButtonLabel {
+ position: absolute;
+ width: 1px;
+ height: 1px;
+ padding: 0;
+ overflow: hidden;
+ clip: rect(0, 0, 0, 0);
+ white-space: nowrap;
+ clip-path: inset(50%);
+ 
+}
+
+.SearchFormInput {
+ display: inline-block;
+ width: 100%;
+ font: inherit;
+ font-size: 20px;
+ border: none;
+ outline: none;
+ padding: 10px;
+ background-color: #fff;
+ color: black;
+
+}
+
+.SearchFormInput::placeholder {
+ font: inherit;
+ font-size: 18px;
+ color: #47424286;
+}
