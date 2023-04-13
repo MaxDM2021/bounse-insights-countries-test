@@ -10,18 +10,17 @@ import { Loader } from '../../components/Loader/Loader';
 import CountryListSCSS from '../CountryItem/CountryList.module.scss';
 import CountrySearchSCSS from './CountrySearch.module.scss';
 
-
+const ITEMS_PER_PAGE = 20;
 
 const CountrySearch = () => {
-
   const [searchCountryValue, setSearchCountryValue] = useState('');
   const [countries, setCountries] = useState([]);
   const [error, setError] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const [loader, setLoader] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
- const countriesName = searchParams.get('name') ?? '';
-
+  const countriesName = searchParams.get('name') ?? '';
 
   useEffect(() => {
     serverAPI(searchCountryValue);
@@ -42,19 +41,36 @@ const CountrySearch = () => {
     setError(false);
     setLoader(true);
     const data = await SearchCountryAPI(name);
-    console.log("data: ", data);
+  
     const results = await data.sort((x, y) =>
       x.name.common.localeCompare(y.name.common)
     );
-    console.log("results: ", results);
+ 
     setCountries(results);
-    console.log("countries ", countries);
+   
     if (!results.length) {
       setError(true);
     }
     setLoader(false);
-   
   };
+
+// pagination:
+
+  const handlePageChange = pageNumber => {
+    setCurrentPage(pageNumber);
+  };
+
+  const getPageData = () => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    return countries.slice(startIndex, endIndex);
+  };
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(countries.length / ITEMS_PER_PAGE); i++) {
+    pageNumbers.push(i);
+  }
+
 
   return (
     <main>
@@ -71,13 +87,33 @@ const CountrySearch = () => {
           </p>
         )}
 
-        {  
-         countries.length > 0 && (
+        {countries.length > 0 && (
+          <>
           <ul className={CountryListSCSS.list}>
-            {countries.map(country => (
-              <CountryItem  key={nanoid()} country={country} ></CountryItem >
+            {getPageData().map(country => (
+              <CountryItem key={nanoid()} country={country}></CountryItem>
             ))}
           </ul>
+
+          <nav>
+              <ul className={CountryListSCSS.pagination}>
+                {pageNumbers.map(number => (
+                  <li
+                    key={number}
+                    className={
+                      currentPage === number
+                        ? CountryListSCSS.active
+                        : undefined
+                    }
+                    onClick={() => handlePageChange(number)}
+                  >
+                    {number}
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </>
+
         )}
       </section>
     </main>

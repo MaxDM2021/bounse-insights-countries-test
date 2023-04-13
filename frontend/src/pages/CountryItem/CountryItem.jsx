@@ -2,20 +2,21 @@ import { Link, useLocation } from 'react-router-dom';
 import CountryListSCSS from './CountryList.module.scss';
 import defoltImg from '../../img/imgDefault.jpg';
 
-export const CountryItem = ({country}) => {
-  const location = useLocation();
+export const CountryItem = ({ country }) => {
+  // const location = useLocation();
 
-  const { name, flags, population } = country;
+  const { name, flags } = country;
 
-  const url = `countries/${population}`;
+  const url = `countries/${name.official}`;
 
   return (
     <li className={CountryListSCSS.item}>
       <Link
-        to={`${url}`}
+        to={{
+          pathname: `${url}`,
+          state: { countryitem: country },
+        }}
         className={CountryListSCSS.link}
-        state={{ from: location }}
-        countryitem={country}
       >
         <img
           src={flags.svg ? flags.svg : defoltImg}
@@ -23,7 +24,7 @@ export const CountryItem = ({country}) => {
           className={CountryListSCSS.img}
         />
         <div className={CountryListSCSS.info}>
-            <h3 className={CountryListSCSS.infoItem}>{name.common}</h3>
+          <h3 className={CountryListSCSS.infoItem}>{name.common}</h3>
         </div>
       </Link>
     </li>

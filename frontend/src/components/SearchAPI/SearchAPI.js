@@ -25,7 +25,7 @@ export const SearchCountryAPI = async (name) => {
  
    return SearchAllCountries();
     }
-    const serverDataURL = `${BASE_URL}name/${name}?fields=name,capital,population,languages,flags`;
+    const serverDataURL = `${BASE_URL}name/${name}?fields=name,capital,population,languages,flags,region,currencies`;
     try {
         const server = await axios.get(serverDataURL);
 
