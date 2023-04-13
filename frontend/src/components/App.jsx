@@ -2,9 +2,11 @@ import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
 import { HeaderAll } from './Header/Header';
 
+import CountriesDetails from '../pages/CountriesDetails/CountriesDetails';
+
 const CountrySearch = lazy(() => import('../pages/CountrySearch/CountrySearch'));
 const PageNotFound = lazy(() => import('../pages/PageNotFound/PageNotFound'));
-const CountriesDetails = lazy(() => import('../pages/CountriesDetails/CountriesDetails'));
+
 
 
 export const App = () => {

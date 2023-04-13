@@ -1,14 +1,16 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { useParams, Outlet, useNavigate } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
-import { SearchCountryByPopul } from '../../components/SearchAPI/SearchAPI';
+import { SearchCountryAPI } from '../../components/SearchAPI/SearchAPI';
 import CountriesDetailsSCSS from './CountriesDetails.module.scss'
 
-const CountriesDetails = () => {
+ const CountriesDetails = ({countryitem}) => {
     const {id} = useParams();
     const [country, setCountry] = useState([]);
     const [goBack, setGoBack] = useState(1);
     const navigate = useNavigate();
+
+
 
     useEffect(() => {
         serverAPI();
@@ -21,13 +23,13 @@ const CountriesDetails = () => {
         return;
     }
 
-    const serverAPI = async (name) => {
-        const data = await SearchCountryByPopul(id, name);
+    const serverAPI = async () => {
+        const data = await SearchCountryAPI(country.name.common);
         console.log("dataDetails: ", data)
         setCountry(data);
     };
 
-
+    
     const {
         name,
         capital,
@@ -37,7 +39,8 @@ const CountriesDetails = () => {
         currency
     } = country;
 
-console.log("country: ", country);
+
+console.log("countryDetail: ", country);
 
     return (
         <main>

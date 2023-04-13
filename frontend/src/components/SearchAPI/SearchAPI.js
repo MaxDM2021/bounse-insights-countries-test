@@ -27,10 +27,7 @@ export const SearchCountryAPI = async (name) => {
     }
     const serverDataURL = `${BASE_URL}name/${name}?fields=name,capital,population,languages,flags`;
     try {
-        const server = await axios.get(serverDataURL, {    
-            params: {
-            page: 1,
-          },});
+        const server = await axios.get(serverDataURL);
 
         const data = await server.data;
   
@@ -42,20 +39,20 @@ export const SearchCountryAPI = async (name) => {
 };
 
 
-export const SearchCountryByPopul = async (name, id) => {
+// export const SearchCountryByPopul = async (name, id) => {
 
-       const serverDataURL = `${BASE_URL}name/${name}?${id}`;
-       try {
-           const server = await axios.get(serverDataURL);
+//        const serverDataURL = `${BASE_URL}name/${name}?${id}`;
+//        try {
+//            const server = await axios.get(serverDataURL);
    
-           const data = await server.data;
+//            const data = await server.data;
      
-           return data;
+//            return data;
           
-       } catch (error) {
-           console.log(error);
-       }
-   };
+//        } catch (error) {
+//            console.log(error);
+//        }
+//    };
 
 
 

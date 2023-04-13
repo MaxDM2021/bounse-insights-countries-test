@@ -15,10 +15,11 @@ export const CountryItem = ({country}) => {
         to={`${url}`}
         className={CountryListSCSS.link}
         state={{ from: location }}
+        countryitem={country}
       >
         <img
           src={flags.svg ? flags.svg : defoltImg}
-          alt={country.flags.svg}
+          alt={flags.svg}
           className={CountryListSCSS.img}
         />
         <div className={CountryListSCSS.info}>
