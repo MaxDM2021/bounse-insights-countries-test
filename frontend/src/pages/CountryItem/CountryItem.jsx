@@ -1,12 +1,10 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CountryListSCSS from './CountryList.module.scss';
 import defoltImg from '../../img/imgDefault.jpg';
 
 export const CountryItem = ({ country }) => {
-  // const location = useLocation();
 
   const { name, flags } = country;
-
   const url = `countries/${name.official}`;
 
   return (
