@@ -4,15 +4,20 @@ const cors = require('cors')
 
 const countriesRouter = require('./routes/api/countries')
 
-const app = express()
+const app = express();
 
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short'
 
-app.use(logger(formatsLogger))
-app.use(cors())
-app.use(express.json())
+app.use(logger(formatsLogger));
+app.use(cors());
+app.use(express.json());
 
-app.use('/api/countries', countriesRouter)
+// app.use('/api/countries', express.static('public'));
+
+app.use('/api/countries', countriesRouter);
+
+
+
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Not found' })
