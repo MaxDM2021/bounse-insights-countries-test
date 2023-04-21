@@ -99,15 +99,19 @@ const CountrySearch = () => {
               <ul className={CountryListSCSS.pagination}>
                 {pageNumbers.map(number => (
                   <li
+                
                     key={number}
                     className={
                       currentPage === number
                         ? CountryListSCSS.active
-                        : undefined
+                        : CountryListSCSS.noactive
                     }
                     onClick={() => handlePageChange(number)}
                   >
+                      <button                     className={ CountryListSCSS.buttonitem
+                    }>
                     {number}
+                    </button>
                   </li>
                 ))}
               </ul>

@@ -6,11 +6,8 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename="bounse-insights-countries-test">
       <App/>
     </BrowserRouter>
   </React.StrictMode>
 );
-
-
-// basename="/bounse-insights-countries-test"

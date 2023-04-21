@@ -8,7 +8,9 @@ import HeaderSCSS from './Header.module.scss'
 export const HeaderAll = () => {
     return (
         <section className={HeaderSCSS.section}>
-            <header className={HeaderSCSS.header}/>
+            <header className={HeaderSCSS.header}>
+                <h2 className={HeaderSCSS.title}> The flags of the world</h2>
+                </header>
             <CountrySearch/>
             <Suspense fallback={<Loader/>}>
                 <Outlet/>

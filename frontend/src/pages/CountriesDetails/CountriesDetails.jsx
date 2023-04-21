@@ -44,28 +44,20 @@ const CountriesDetails = () => {
   const currencyValues = Object.values(currencies);
   const currency = currencyValues[0]?.name;
 
-
-
   return (
     <main>
       <section className={CountriesDetailsSCSS.details}>
-        <button
-          type="button"
-          onClick={goBackPage}
-          className={CountriesDetailsSCSS.button}
-        >
-          <FiArrowLeft size={30} />
-          GO BACK
-        </button>
         <div className={CountriesDetailsSCSS.card}>
-          <img
-            src={flags.svg}
-            alt={name.official}
-            className={CountriesDetailsSCSS.img}
-          />
+          <div className={CountriesDetailsSCSS.cardbox}>
+            <img
+              src={flags.svg}
+              alt={name.official}
+              className={CountriesDetailsSCSS.img}
+            />
+          </div>
           <div className={CountriesDetailsSCSS.info}>
             <h2 className={CountriesDetailsSCSS.title}>{name.common}</h2>
-            <h2 className={CountriesDetailsSCSS.titleInfo}>Informations</h2>
+            <h2 className={CountriesDetailsSCSS.titleInfo}>Informations:</h2>
             <ul className={CountriesDetailsSCSS.list}>
               <li className={CountriesDetailsSCSS.item}>
                 <h3 className={CountriesDetailsSCSS.titleItem}>Capital:</h3>
@@ -92,6 +84,15 @@ const CountriesDetails = () => {
             </ul>
           </div>
         </div>
+
+        <button
+          type="button"
+          onClick={goBackPage}
+          className={CountriesDetailsSCSS.button}
+        >
+          <FiArrowLeft className={CountriesDetailsSCSS.icon} size={30} />
+          GO BACK
+        </button>
         <Suspense fallback={null}>
           <Outlet />
         </Suspense>
