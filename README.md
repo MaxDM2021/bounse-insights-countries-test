@@ -1,3 +1,23 @@
+# Backend
+
+
+## Preparation for work
+
+1. Enter in the folder backend with the `cd backend` command.
+2. Install the project's base dependencies with the `npm install` command.
+3. Start development mode by running the `npm start` command, or `node server.js` command. Server will be running.
+
+
+### Commands:
+
+- `npm start` &mdash; server start in production mode
+- `npm run start:dev` &mdash; start the server in development mode
+- `npm run lint` &mdash; run a code check run with eslint, must run before each PR and fix all linter errors
+- `npm lint:fix` &mdash; the same linter check, but with automatic fixes for simple errors
+
+
+# Frontend
+
 # React homework template
 
 This project was created with
@@ -5,32 +25,17 @@ This project was created with
 acquainted and configure additional features
 [refer to documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Создание репозитория по шаблону
 
-Используй этот репозиторий организации GoIT как шаблон для создания репозитория
-своего проекта. Для этого нажми на кнопку `«Use this template»` и выбери опцию
-`«Create a new repository»`, как показано на изображении.
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
-
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
-
-![Creating repo from a template step 2](./assets/template-step-2.png)
-
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
-
-## Подготовка к работе
+## Preparation for work
 
 1. Make sure you have an LTS version of Node.js installed on your computer.
    [Download and install](https://nodejs.org/en/) if needed.
-2. Install the project's base dependencies with the `npm install` command.
-3. Start development mode by running the `npm start` command.
-4. Go to [http://localhost:3000](http://localhost:3000) in your browser. This
+2. Exit in the folder backend with the `cd ..` command.
+3. Enter in the folder frontend with the `cd frontend` command.
+4. Install the project's base dependencies with the `npm install` command.
+5. Start development mode by running the `npm start` command.
+6. Go to [http://localhost:3000](http://localhost:3000) in your browser. This
    page will automatically reload after saving changes to the project files.
 
 ## Deploy
@@ -51,7 +56,6 @@ Next, you need to go to the settings of the GitHub repository (`Settings` >
 `/root` folder of the `gh-pages` branch, if this was not done automatically.
 
 ![GitHub Pages settings](./assets/repo-settings.png)
-
 ### Deployment status
 
 The deployment status of the latest commit is displayed with an icon next to its
@@ -103,3 +107,5 @@ the line are required.
 3. If all steps are successful, the built production version of the project
    files is sent to the `gh-pages` branch. Otherwise, the script execution log
    will indicate what the problem is.
+
+
