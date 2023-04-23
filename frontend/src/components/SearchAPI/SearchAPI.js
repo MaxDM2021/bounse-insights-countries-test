@@ -4,7 +4,9 @@
 
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:3001/';
+// const BASE_URL = 'http://localhost:3001/';
+
+const BASE_URL = 'https://bounse-insights-countries-test.onrender.com/' 
 
 
 export const SearchAllCountries = async () => {

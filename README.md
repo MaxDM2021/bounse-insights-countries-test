@@ -1,7 +1,10 @@
 # Backend
 
+1. This backend has deployed in [Render](https://render.com).
+2. Work link is `https://bounse-insights-countries-test.onrender.com`.
+3. At the first start, you may need to wait 2-5 minutes. Due to the fact that the hosting `Renderer` is free, it goes into sleep mode, when sending a request to the server, it needs time to wake up.
 
-## Preparation for work
+## Preparation for local work in your PC
 
 1. Enter in the folder backend with the `cd backend` command.
 2. Install the project's base dependencies with the `npm install` command.
@@ -18,6 +21,10 @@
 
 # Frontend
 
+
+1. This frontend has deployed in [Netlify](https://app.netlify.com).
+2. Work link is `https://keen-cascaron-8399a0.netlify.app`.
+
 # React homework template
 
 This project was created with
@@ -27,7 +34,7 @@ acquainted and configure additional features
 
 
 
-## Preparation for work
+## Preparation for local work in your PC
 
 1. Make sure you have an LTS version of Node.js installed on your computer.
    [Download and install](https://nodejs.org/en/) if needed.

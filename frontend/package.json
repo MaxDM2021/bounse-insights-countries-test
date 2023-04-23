@@ -2,7 +2,7 @@
   "name": "bounse-insights-countries-test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://MaxDM2021.github.io/bounse-insights-countries-test/",
+  "homepage": "https://keen-cascaron-8399a0.netlify.app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
@@ -49,6 +49,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://localhost:3001/" 
+  }
 }

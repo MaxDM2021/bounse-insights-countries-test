@@ -6,17 +6,29 @@ const countriesRouter = require('./routes/api/countries')
 
 const app = express();
 
-const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short'
+const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
+
+
+app.use(cors());
+app.use(function (req, res, next) {
+  res.header(
+    'Access-Control-Allow-Origin',
+    'https://keen-cascaron-8399a0.netlify.app',
+  );
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept',
+  );
+  next();
+});
+
 
 app.use(logger(formatsLogger));
-app.use(cors());
-// app.use(express.json());
+app.use(express.json());
 
-app.use('/api/countries', express.static('public'));
 
 app.use('/api/countries', countriesRouter);
-
-
 
 
 app.use((req, res) => {
