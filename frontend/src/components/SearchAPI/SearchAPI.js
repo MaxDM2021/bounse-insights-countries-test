@@ -6,13 +6,18 @@ import axios from 'axios';
 
 // const BASE_URL = 'http://localhost:3001/';
 
-const BASE_URL = 'https://bounse-insights-countries-test.onrender.com/' 
+const BASE_URL = 'https://bounse-insights-countries-test.onrender.com/'; 
 
+
+const axiosInstance = axios.create({
+  baseURL: BASE_URL,
+  withCredentials: true,
+});
 
 export const SearchAllCountries = async () => {
-  const serverDataURL = `${BASE_URL}api/countries/`;
+  const serverDataURL = `api/countries/`;
   try {
-    const server = await axios.get(serverDataURL);
+    const server = await axiosInstance.get(serverDataURL);
     const data = await server.data;
 
     return data;
@@ -26,9 +31,9 @@ export const SearchCountryAPI = async name => {
   if (name === '' || name === null) {
     return SearchAllCountries();
   }
-  const serverDataURL = `${BASE_URL}api/countries/?country=${name}`;
+  const serverDataURL = `api/countries/?country=${name}`;
   try {
-    const server = await axios.get(serverDataURL);
+    const server = await axiosInstance.get(serverDataURL);
     const data = await server.data;
 
     return data;
@@ -38,7 +43,9 @@ export const SearchCountryAPI = async name => {
 };
 
 
-// ============ GET REQUEST to API ===================
+
+
+// ============ GET REQUEST directly to API ===================
 
 
 // import axios from 'axios';

@@ -40,9 +40,10 @@ acquainted and configure additional features
    [Download and install](https://nodejs.org/en/) if needed.
 2. Exit in the folder backend with the `cd ..` command.
 3. Enter in the folder frontend with the `cd frontend` command.
-4. Install the project's base dependencies with the `npm install` command.
-5. Start development mode by running the `npm start` command.
-6. Go to [http://localhost:3000](http://localhost:3000) in your browser. This
+4. Change in `frontend/src/components/SearchAPI/SearchAPI.js` data of `BASE_URL` on `BASE_URL = 'http://localhost:3001/'`;
+5. Install the project's base dependencies with the `npm install` command.
+6. Start development mode by running the `npm start` command.
+7. Go to [http://localhost:3000](http://localhost:3000) in your browser. This
    page will automatically reload after saving changes to the project files.
 
 ## Deploy
