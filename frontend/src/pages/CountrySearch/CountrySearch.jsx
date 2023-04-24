@@ -108,7 +108,7 @@ const CountrySearch = () => {
                     }
                     onClick={() => handlePageChange(number)}
                   >
-                      <button                     className={ CountryListSCSS.buttonitem
+                      <button className={ CountryListSCSS.buttonitem
                     }>
                     {number}
                     </button>

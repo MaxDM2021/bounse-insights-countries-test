@@ -4,66 +4,24 @@
 2. Work link is `https://bounse-insights-countries-test.onrender.com`.
 3. At the first start, you may need to wait 2-5 minutes. Due to the fact that the hosting `Renderer` is free, it goes into sleep mode, when sending a request to the server, it needs time to wake up.
 
-## Preparation for local work in your PC
-
-1. Enter in the folder backend with the `cd backend` command.
-2. Install the project's base dependencies with the `npm install` command.
-3. Start development mode by running the `npm start` command, or `node server.js` command. Server will be running.
-
-
-### Commands:
-
-- `npm start` &mdash; server start in production mode
-- `npm run start:dev` &mdash; start the server in development mode
-- `npm run lint` &mdash; run a code check run with eslint, must run before each PR and fix all linter errors
-- `npm lint:fix` &mdash; the same linter check, but with automatic fixes for simple errors
-
-
 # Frontend
 
-
 1. This frontend has deployed in [Netlify](https://app.netlify.com).
-2. Work link is `https://keen-cascaron-8399a0.netlify.app`.
+2. Live page is [https://keen-cascaron-8399a0.netlify.app](https://keen-cascaron-8399a0.netlify.app).
 
-# React homework template
+## React template
 
 This project was created with
 [Create React App](https://github.com/facebook/create-react-app). To get
 acquainted and configure additional features
 [refer to documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-
-
-## Preparation for local work in your PC
-
-1. Make sure you have an LTS version of Node.js installed on your computer.
-   [Download and install](https://nodejs.org/en/) if needed.
-2. Exit in the folder backend with the `cd ..` command.
-3. Enter in the folder frontend with the `cd frontend` command.
-4. Change in `frontend/src/components/SearchAPI/SearchAPI.js` data of `BASE_URL` on `BASE_URL = 'http://localhost:3001/'`;
-5. Install the project's base dependencies with the `npm install` command.
-6. Start development mode by running the `npm start` command.
-7. Go to [http://localhost:3000](http://localhost:3000) in your browser. This
-   page will automatically reload after saving changes to the project files.
-
 ## Deploy
 
 The production version of the project will automatically be linted, built, and
 deployed to GitHub Pages, in the `gh-pages` branch, every time the `main` branch
-is updated. For example, after a direct push or an accepted pull request. To do
-this, you need to edit the `homepage` field in the `package.json` file,
-replacing `your_username` and `your_repo_name` with your own, and submit the
-changes to GitHub.
+is updated. 
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
-
-Next, you need to go to the settings of the GitHub repository (`Settings` >
-`Pages`) and set the distribution of the production version of files from the
-`/root` folder of the `gh-pages` branch, if this was not done automatically.
-
-![GitHub Pages settings](./assets/repo-settings.png)
 ### Deployment status
 
 The deployment status of the latest commit is displayed with an icon next to its
@@ -76,32 +34,15 @@ ID.
 More detailed information about the status can be viewed by clicking on the
 icon, and in the drop-down window, follow the link `Details`.
 
-![Deployment status](./assets/deploy-status.png)
-
 ### Live page
 
 After some time, usually a couple of minutes, the live page can be viewed at the
 address specified in the edited `homepage` property. For example, here is a link
 to a live version for this repository
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
+[https://keen-cascaron-8399a0.netlify.app](https://keen-cascaron-8399a0.netlify.app).
 
 If a blank page opens, make sure there are no errors in the `Console` tab
-related to incorrect paths to the CSS and JS files of the project (**404**). You
-most likely have the wrong value for the `homepage` property in the
-`package.json` file.
-
-### Routing
-
-If your application uses the `react-router-dom` library for routing, you must
-additionally configure the `<BrowserRouter>` component by passing the exact name
-of your repository in the `basename` prop. Slashes at the beginning and end of
-the line are required.
-
-```jsx
-<BrowserRouter basename="/your_repo_name/">
-  <App />
-</BrowserRouter>
-```
+related to incorrect paths to the CSS and JS files of the project (**404**).
 
 ## How it works
 

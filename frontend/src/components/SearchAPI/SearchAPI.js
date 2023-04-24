@@ -1,10 +1,10 @@
 
-// ============ GET REQUEST to SERVER ===================
+// ============ GET REQUEST to SERVER(backend) ===================
 
 
 import axios from 'axios';
 
-// const BASE_URL = 'http://localhost:3001/';
+
 
 const BASE_URL = 'https://bounse-insights-countries-test.onrender.com/'; 
 
@@ -28,7 +28,7 @@ export const SearchAllCountries = async () => {
 
 
 export const SearchCountryAPI = async name => {
-  if (name === '' || name === null) {
+    if(!name) {
     return SearchAllCountries();
   }
   const serverDataURL = `api/countries/?country=${name}`;
@@ -44,42 +44,4 @@ export const SearchCountryAPI = async name => {
 
 
 
-
-// ============ GET REQUEST directly to API ===================
-
-
-// import axios from 'axios';
-
-// const BASE_URL = 'https://restcountries.com/v3.1/';
-
-// // BASE_URL = 'https://
-
-
-// export const SearchAllCountries = async () => {
-//   const serverDataURL = `${BASE_URL}all?fields=name,capital,population,languages,flags`;
-//   try {
-//     const server = await axios.get(serverDataURL);
-//     const data = await server.data;
-
-//     return data;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-
-// export const SearchCountryAPI = async name => {
-//   if (name === '' || name === null) {
-//     return SearchAllCountries();
-//   }
-//   const serverDataURL = `${BASE_URL}name/${name}?fields=name,capital,population,languages,flags,region,currencies`;
-//   try {
-//     const server = await axios.get(serverDataURL);
-//     const data = await server.data;
-
-//     return data;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
 

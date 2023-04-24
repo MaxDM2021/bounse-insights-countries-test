@@ -12,8 +12,6 @@ const PageNotFound = lazy(() => import('../pages/PageNotFound/PageNotFound'));
 
 export const App = ({info}) => {
 
-
-
   return (
     <Routes>
       <Route path="/" exact element={<HeaderAll />} />
@@ -22,5 +20,6 @@ export const App = ({info}) => {
       <Route path="*" element={<PageNotFound />} />
     </Routes>
     );
+    
   };
 
