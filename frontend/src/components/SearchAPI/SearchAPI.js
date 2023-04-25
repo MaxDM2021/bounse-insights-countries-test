@@ -31,6 +31,7 @@ export const SearchCountryAPI = async name => {
     if(!name) {
     return SearchAllCountries();
   }
+
   const serverDataURL = `api/countries/?country=${name}`;
   try {
     const server = await axiosInstance.get(serverDataURL);
@@ -39,6 +40,7 @@ export const SearchCountryAPI = async name => {
     return data;
   } catch (error) {
     console.log(error);
+    return error.message;
   }
 };
 
