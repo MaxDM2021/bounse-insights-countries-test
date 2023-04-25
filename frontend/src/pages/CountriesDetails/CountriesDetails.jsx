@@ -6,7 +6,7 @@ import CountriesDetailsSCSS from './CountriesDetails.module.scss';
 
 const CountriesDetails = () => {
   const location = useLocation();
-  const countryName = location.pathname.replace('/countries/', '');
+  const countryName = location.pathname.replace('countries/', '');
   const [country, setCountry] = useState({});
   const [goBack, setGoBack] = useState(1);
   const navigate = useNavigate();
