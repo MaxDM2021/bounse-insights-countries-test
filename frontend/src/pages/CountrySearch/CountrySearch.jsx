@@ -7,6 +7,8 @@ import { Form } from '../../components/Form/Form';
 import { CountryItem } from '../CountryItem/CountryItem';
 import { Loader } from '../../components/Loader/Loader';
 
+import img from './error.jpg';
+
 
 import CountryListSCSS from '../CountryItem/CountryList.module.scss';
 import CountrySearchSCSS from './CountrySearch.module.scss';
@@ -87,9 +89,9 @@ const CountrySearch = () => {
         {error && (
           <>
           <p className={CountrySearchSCSS.p}>
-           There isn't countries with name {`${searchCountryValue}`} . Please try again.
+           There isn't countries with name "{`${searchCountryValue}`}" . Please try again.
           </p>
-          <img src='./error.jpg' width={200} height={200} alt='error'/>
+          <img className={CountrySearchSCSS.img} src={img} width={200} height={200} alt='error'/>
           </>
         )}
 
