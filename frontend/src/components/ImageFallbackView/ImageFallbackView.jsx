@@ -1,10 +1,7 @@
 import errorImage from './error.jpg';
-import 'components/Styles/styles.css';
-
 
 
 function ImageFallbackView({ message }) {
-
 
 return (
 
