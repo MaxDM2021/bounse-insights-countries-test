@@ -9,7 +9,6 @@ const CountrySearch = lazy(() => import('../pages/CountrySearch/CountrySearch'))
 const PageNotFound = lazy(() => import('../pages/PageNotFound/PageNotFound'));
 
 
-
 export const App = () => {
 
   return (

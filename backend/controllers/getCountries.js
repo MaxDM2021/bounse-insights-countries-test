@@ -11,12 +11,14 @@ const searchAllCountries = async (req, res, next) => {
       serverDataURL = `${BASE_URL}name/${req.query.country}`;
     }
 
+ 
     const server = await axios.get(serverDataURL);
     const data = await server.data;
 
     return res.status(200).json(data);
   } catch (error) {
     console.log(error);
+    return res.status(400).send('Error 400: Country not found');
   }
 };
 

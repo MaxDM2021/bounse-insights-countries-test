@@ -83,7 +83,7 @@ const CountrySearch = () => {
         {loader && <Loader />}
         {error && (
           <p className={CountrySearchSCSS.p}>
-            Sorry, we didn't find anything. Try again.
+           No results found. Please try again.
           </p>
         )}
 
