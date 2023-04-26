@@ -87,9 +87,9 @@ const CountrySearch = () => {
         {error && (
           <>
           <p className={CountrySearchSCSS.p}>
-           No results found. Please try again.
+           There isn't countries with name {`${searchCountryValue}`} . Please try again.
           </p>
-
+          <img src='./error.jpg' width={200} height={200} alt='error'/>
           </>
         )}
 
