@@ -57,4 +57,19 @@ related to incorrect paths to the CSS and JS files of the project (**404**).
    files is sent to the `gh-pages` branch. Otherwise, the script execution log
    will indicate what the problem is.
 
+# Testing of application by Cypress
+
+1. Register download and install [Cypress app](https://docs.cypress.io/guides/getting-started/installing-cypress) in your PC.
+2. Follow to your project: `cd /your/project/path`.
+3. Instal `npm i cypress`.
+4. Open `Cypress app` with use command `npx cypress open`.
+5. Wheh `Cypress app` have opened, click plese on these bottons:
+
+![1](./frontend//img/cypress1.jpg)
+
+![2](./frontend//img/cypress2.jpg)
+
+6. Use file `Test_1.cy.js`  for testing: 
+
+![Test](./frontend//img/cypress3.jpg)
 
