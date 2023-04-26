@@ -46,8 +46,6 @@ related to incorrect paths to the CSS and JS files of the project (**404**).
 
 ## How it works
 
-![How it works](./assets/how-it-works.png)
-
 1. After each push to the `main` branch of the GitHub repository, a special
    script (GitHub Action) is launched from the `.github/workflows/deploy.yml`
    file.
@@ -59,7 +57,7 @@ related to incorrect paths to the CSS and JS files of the project (**404**).
 
 # Testing of application by Cypress
 
-1. Register download and install [Cypress app](https://docs.cypress.io/guides/getting-started/installing-cypress) in your PC.
+1. Register, download and install [Cypress app](https://docs.cypress.io/guides/getting-started/installing-cypress) in your PC.
 2. Follow to your project: `cd /your/project/path`.
 3. Instal `npm i cypress`.
 4. Open `Cypress app` with use command `npx cypress open`.
@@ -72,4 +70,11 @@ related to incorrect paths to the CSS and JS files of the project (**404**).
 6. Use file `Test_1.cy.js`  for testing: 
 
 ![Test](./frontend//img/cypress3.jpg)
+
+7. Result (I hope;-) will be successfull:
+
+![Result](./frontend//img/cypress4.jpg)
+
+
+
 
