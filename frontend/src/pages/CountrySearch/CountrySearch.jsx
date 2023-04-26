@@ -6,7 +6,7 @@ import { SearchCountryAPI } from '../../components/SearchAPI/SearchAPI';
 import { Form } from '../../components/Form/Form';
 import { CountryItem } from '../CountryItem/CountryItem';
 import { Loader } from '../../components/Loader/Loader';
-import { ImageFallbackView } from '../../components/ImageFallbackView'
+
 
 import CountryListSCSS from '../CountryItem/CountryList.module.scss';
 import CountrySearchSCSS from './CountrySearch.module.scss';
@@ -23,7 +23,7 @@ const CountrySearch = () => {
 
   const countriesName = searchParams.get('name') ?? '';
 
-  const message = `There isn't countrie with name ${searchCountryValue}`
+  const message = `There isn't countrie with name ${searchCountryValue}`;
 
   useEffect(() => {
     serverAPI(searchCountryValue);
@@ -89,7 +89,7 @@ const CountrySearch = () => {
           <p className={CountrySearchSCSS.p}>
            No results found. Please try again.
           </p>
-          <ImageFallbackView message={message}/>
+          
           </>
         )}
 
